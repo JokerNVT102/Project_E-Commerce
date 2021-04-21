@@ -12,9 +12,8 @@
 
             <div class="wrap-iten-in-cart">
                 @if(Session::has('success_message'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>Success</strong>{{Session::get('success_message')}}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div class="alert alert-success" role="alert">
+                    <strong>Success </strong>{{Session::get('success_message')}}
                 </div>
                 @endif
                 @if(Cart::count() > 0)
@@ -49,7 +48,8 @@
                             <p class="price">${{$item->subtotal}}</p>
                         </div>
                         <div class="delete">
-                            <a href="#" class="btn btn-delete" title="">
+                            <a href="#" wire:click.prevent="destroy('{{$item->rowId}}')" class="btn btn-delete"
+                                title="">
                                 <span>Delete from your cart</span>
                                 <i class="fa fa-times-circle" aria-hidden="true"></i>
                             </a>
@@ -87,7 +87,9 @@
                     </a>
                 </div>
                 <div class="update-clear">
-                    <a class="btn btn-clear" href="#">Clear Shopping Cart</a>
+                    <a class="btn btn-clear" href="#" wire:click.prevent="destroyAll()">
+                        Clear Shopping Cart
+                    </a>
                     <a class="btn btn-update" href="#">Update Shopping Cart</a>
                 </div>
             </div>
