@@ -74,8 +74,11 @@
                                     <a href="{{route('product.details',['slug' => $product->slug])}}"
                                         class="product-name"><span>{{$product->name}}</span></a>
                                     <div class="wrap-price"><span
-                                            class="product-price">{{$product->regular_price}}</span></div>
-                                    <a href="#" class="btn add-to-cart">Add To Cart</a>
+                                            class="product-price">${{$product->regular_price}}</span></div>
+                                    <a href="#" class="btn add-to-cart"
+                                        wire:click.prevent="store({{$product->id}},'{{$product->name}}', {{$product->regular_price}})">
+                                        Add To Cart
+                                    </a>
                                 </div>
                             </div>
                         </li>
@@ -86,13 +89,6 @@
 
                 <div class="wrap-pagination-info">
                     {{$products->links()}}
-                    <!-- <ul class="page-numbers">
-                        <li><span class="page-number-item current">1</span></li>
-                        <li><a class="page-number-item" href="#">2</a></li>
-                        <li><a class="page-number-item" href="#">3</a></li>
-                        <li><a class="page-number-item next-link" href="#">Next</a></li>
-                    </ul>
-                    <p class="result-count">Showing 1-8 of 12 result</p> -->
                 </div>
             </div>
             <!--end main products area-->
