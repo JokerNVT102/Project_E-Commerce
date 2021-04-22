@@ -1,13 +1,4 @@
 <div>
-    <style>
-    nav svg {
-        height: 20px;
-    }
-
-    /* nav .hidden {
-        display: block !important;
-    } */
-    </style>
     <div class="container" style="padding:30px 0;">
         <div class="row">
             <div class="col-md-12">
@@ -15,7 +6,7 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-6">
-                                All New Category
+                                New Category
                             </div>
                             <div class="col-md-6">
                                 <a href="{{route('admin.categories')}}" class="btn btn-success pull-right">All
@@ -34,7 +25,7 @@
                                 <label class="col-md-4 control-label">Category Name</label>
                                 <div class="col-md-4">
                                     <input type="text" placeholder="Category Name" class="form-control input-md"
-                                        wire:model="name" wire:keyup="generateslug">
+                                        wire:model="name" wire:keyup="generateSlug">
                                 </div>
 
                             </div>
