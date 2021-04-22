@@ -7168,29 +7168,29 @@ background-color: #888888;
 .pt-2, .py-2{
     padding-top: .5rem !important;
 }
-.bg-white{
-    background-color: #fff !important;
+.flex-1{
+    display: none !important;
 }
-.boder{
+/* .boder{
     border: 1px solid #dee2e6 !important;
-}
-.bg-white{
-    background-color: #fff !important;
-}
+} */
+
 nav svg{
+
 height: 20px;
+
 }
-svg{
-    overflow: hidden;
-    vertical-align: middle;
-}
+    svg{
+        overflow: hidden;
+        vertical-align: middle;
+    }
 .wrap-pagination-info{
     margin-top: 46px;
-    border-top: 1px solid #e6e6e6;
+    border-top: 1px ;
     padding-top: 10px;
 }
 .wrap-pagination-info .hidden{
-   display: block !important;
+   display: inline-block !important;
 }
 .wrap-pagination-info .rounded-l-md{
    margin-right: 5px;
