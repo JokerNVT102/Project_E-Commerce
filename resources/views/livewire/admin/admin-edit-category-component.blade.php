@@ -15,11 +15,11 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-6">
-                                All New Category
+                                Edit Category
                             </div>
                             <div class="col-md-6">
                                 <a href="{{route('admin.categories')}}" class="btn btn-success pull-right">All
-                                    Categories</a>
+                                    Category</a>
                             </div>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                             <strong>Success </strong>{{Session::get('message')}}
                         </div>
                         @endif
-                        <form class="form-horizontal" wire:submit.prevent="sortCategory">
+                        <form class="form-horizontal" wire:submit.prevent="updateCategory">
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Category Name</label>
                                 <div class="col-md-4">
@@ -50,7 +50,7 @@
                                 <label class="col-md-4 control-label"></label>
                                 <div class="col-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        Submit
+                                        Update
                                     </button>
                                 </div>
                             </div>

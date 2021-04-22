@@ -10,6 +10,7 @@ use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminCategoryComponent;
 use App\Http\Livewire\Admin\AdminAddCategoryComponent;
+use App\Http\Livewire\Admin\AdminEditCategoryComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,13 +39,15 @@ Route::get('/product-category/{category_slug}', CategoryComponent::class)->name(
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');
+
+// For User or Customer
+Route::middleware(['auth:sanctum', 'verified'])->group( function () {
+    Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
+});
 // For Admin
 Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group( function () {
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
     Route::get('/admin/categories', AdminCategoryComponent::class)->name('admin.categories');
     Route::get('/admin/categories/add', AdminAddCategoryComponent::class)->name('admin.addcategory');
-});
-// For User or Customer
-Route::middleware(['auth:sanctum', 'verified'])->group( function () {
-    Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
+    Route::get('/admin/categories/edit/{category_slug}', AdminEditCategoryComponent::class)->name('admin.editcategory');
 });
